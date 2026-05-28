@@ -32,7 +32,7 @@ configure([project(":fabric"), project(":forge")]) {
             requires("garden-trails")
             requires("dawn-of-time-beyond-vanilla")
             requires("fusion-connected-textures")
-            requires("yacl ")
+            requires("yacl")
         }
 
         modrinth {
@@ -45,7 +45,7 @@ configure([project(":fabric"), project(":forge")]) {
             requires("garden-trails")
             requires("dot-beyond-vanilla")
             requires("fusion-connected-textures")
-            requires("yacl ")
+            requires("yacl")
         }
     }
 }
