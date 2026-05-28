@@ -2,7 +2,7 @@
   "structures": [
     {
       "structure": "chinese:chinese_camp",
-      "weight": 1
+      "weight": 5
     },
     {
       "structure": "chinese:chinese_fort",
@@ -10,23 +10,35 @@
     },
     {
       "structure": "chinese:chinese_ricefarm",
-      "weight": 1
+      "weight": 5
     },
     {
       "structure": "chinese:chinese_temple",
-      "weight": 1
+      "weight": 5
     },
     {
       "structure": "chinese:tulou",
-      "weight": 1
+      "weight": 3
     },
     {
       "structure": "chinese:chinese_emperor_tomb",
-      "weight": 1
+      "weight": 3
     },
     {
       "structure": "chinese:chinese_pagoda",
-      "weight": 1
+      "weight": 3
+    },
+    {
+      "structure": "chinese:desert_fort",
+      "weight": 3
+    },
+    {
+      "structure": "chinese:apothecary_house",
+      "weight": 5
+    },
+    {
+      "structure": "chinese:small_house",
+      "weight": 5
     }
   ],
   "placement": {

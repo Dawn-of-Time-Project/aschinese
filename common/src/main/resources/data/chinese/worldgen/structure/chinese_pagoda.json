@@ -1,11 +1,11 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#chinese:chinese_pagoda",
+  "biomes": "#chinese:chinese_biomes",
   "step": "surface_structures",
   "terrain_adaptation": "beard_thin",
   "spawn_overrides": {},
   "start_pool": "chinese:chinese_pagoda",
-  "size": 7,
+  "size": 1,
   "start_height": {
     "absolute": 0
   },

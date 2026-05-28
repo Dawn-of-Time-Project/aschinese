@@ -18,9 +18,10 @@ configure([project(":fabric"), project(":forge")]) {
     publishMods {
         changelog = patchNoteProvider
         type = STABLE
+        displayName = "${rootProject.property("mod_name")} ${rootProject.property("minecraft_version")} v${rootProject.property("version")}"
 
         curseforge {
-            projectId = ""
+            projectId = "1377996"
             accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
             minecraftVersions.add(project.property("minecraft_version"))
 
@@ -28,36 +29,23 @@ configure([project(":fabric"), project(":forge")]) {
 
             requires("dawn-of-time")
             requires("armor-of-the-ages")
-
-            /* shared dependencies found on curseforge
-            requires("slug")
-            optional("slug")
-            incompatible("slug")
-            embeds("slug")
-             */
+            requires("garden-trails")
+            requires("dawn-of-time-beyond-vanilla")
+            requires("fusion-connected-textures")
+            requires("yacl ")
         }
 
         modrinth {
-            projectId = ""
+            projectId = "gYnV8NtT"
             accessToken = providers.environmentVariable("MODRINTH_API_KEY")
             minecraftVersions.add(project.property("minecraft_version"))
 
             requires("dawn-of-time")
             requires("armor-of-the-ages")
-
-            /* shared dependencies found on modrinth
-            requires { // specify either id or slug, but not both at once
-                id = ""
-                slug = ""
-
-                version = "" // optional
-            } // or `requires("slug")` if you only need/want to specify the slug
-
-            // all of these have the same format as above
-            optional { }
-            incompatible { }
-            embeds { }
-            */
+            requires("garden-trails")
+            requires("dot-beyond-vanilla")
+            requires("fusion-connected-textures")
+            requires("yacl ")
         }
     }
 }
