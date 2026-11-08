@@ -1,6 +1,6 @@
 plugins {
-    id 'fabric-loom' version '1.17-SNAPSHOT' apply(false)
-    id 'net.neoforged.moddev' version '2.0.105' apply(false)
+    id 'net.fabricmc.fabric-loom' version '1.17.21' apply(false)
+    id 'net.neoforged.moddev' version '2.0.148' apply(false)
     id "me.modmuss50.mod-publish-plugin" version "2.2.1" apply(false)
 }
 
@@ -31,7 +31,6 @@ configure([project(":fabric"), project(":neoforge")]) {
             requires("dawn-of-time")
             requires("armor-of-the-ages")
             requires("garden-trails")
-            requires("dawn-of-time-beyond-vanilla")
             requires("fusion-connected-textures")
             requires("yacl")
         }
@@ -44,7 +43,6 @@ configure([project(":fabric"), project(":neoforge")]) {
             requires("dawn-of-time")
             requires("armor-of-the-ages")
             requires("garden-trails")
-            requires("dot-beyond-vanilla")
             requires("fusion-connected-textures")
             requires("yacl")
         }

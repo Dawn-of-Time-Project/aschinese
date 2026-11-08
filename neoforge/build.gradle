@@ -10,22 +10,14 @@ neoForge {
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
     }
-    parchment {
-        minecraftVersion = parchment_minecraft
-        mappingsVersion = parchment_version
-    }
     runs {
         configureEach {
             systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
             ideName = "NeoForge ${it.name.capitalize()} (${project.path})"
         }
         client { client() }
-        data {
-            data()
-            programArguments.addAll '--mod', mod_id, '--all',
-                '--output', file('src/generated/resources/').absolutePath,
-                '--existing', file('src/main/resources/').absolutePath
-        }
+        clientData { clientData() }
+        serverData { serverData() }
         server { server() }
     }
     mods {
@@ -43,13 +35,12 @@ repositories {
 
 dependencies {
     compileOnly project(":common")
-    runtimeOnly("maven.modrinth:architectury-api:1IiqEQGl")
-    runtimeOnly("maven.modrinth:yacl:7TVdVtxF")
-    runtimeOnly("maven.modrinth:fusion-connected-textures:AYDaLPK8")
-    runtimeOnly("maven.modrinth:armor-of-the-ages:EvVBQ12Y")
-    runtimeOnly("maven.modrinth:dawn-of-time:vuLdhPUq")
-    runtimeOnly("maven.modrinth:garden-trails:z6aW3Swm")
-    runtimeOnly("maven.modrinth:dot-beyond-vanilla:xeJOSgnD")
+    runtimeOnly("maven.modrinth:architectury-api:dZ7iNvS4")
+    runtimeOnly("maven.modrinth:yacl:GL24RgOP")
+    runtimeOnly("maven.modrinth:fusion-connected-textures:zPVqWQrW")
+    runtimeOnly("maven.modrinth:armor-of-the-ages:szxHk9Wu")
+    runtimeOnly("maven.modrinth:dawn-of-time:Kof3PABy")
+    runtimeOnly("maven.modrinth:garden-trails:I3NLfe33")
 }
 
 publishMods {

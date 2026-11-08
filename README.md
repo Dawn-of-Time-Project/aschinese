@@ -28,7 +28,6 @@ A Chinese-inspired structure pack for Minecraft, part of the **Ancient Structure
 ### Dependencies
 - [Dawn of Time Builder](https://www.curseforge.com/minecraft/mc-mods/dawnoftimebuilder)
 - [Armor of the Ages](https://www.curseforge.com/minecraft/mc-mods/armoroftheages)
-- [DoT:Beyond Vanilla](https://www.curseforge.com/minecraft/mc-mods/dawn-of-time-beyond-vanilla)
 - [Garden Trails](https://www.curseforge.com/minecraft/mc-mods/garden-trails)
 - [YACL](https://modrinth.com/mod/yacl)
 - [Fusion Connected Textures](https://www.curseforge.com/minecraft/mc-mods/fusion-connected-textures)

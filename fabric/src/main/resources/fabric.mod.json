@@ -25,9 +25,9 @@
     ],
     "depends": {
         "fabricloader": ">=0.14",
-        "fabric": "*",
-        "minecraft": ">=1.21.1 <1.22",
-        "java": ">=21",
+        "fabric-api": "*",
+        "minecraft": "${fabric_minecraft_version_range}",
+        "java": ">=${java_version}",
         "dawnoftimebuilder": ">=1.6.8",
         "armoroftheages": ">=1.5.11"
     },

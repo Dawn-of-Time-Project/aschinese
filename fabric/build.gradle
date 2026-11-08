@@ -1,6 +1,6 @@
 plugins {
     id 'multiloader-loader'
-    id 'fabric-loom'
+    id 'net.fabricmc.fabric-loom'
     id 'me.modmuss50.mod-publish-plugin'
 }
 
@@ -31,28 +31,21 @@ repositories {
 
 dependencies {
     minecraft "com.mojang:minecraft:${minecraft_version}"
-    mappings loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${parchment_minecraft}:${parchment_version}@zip")
-    }
-    modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+    implementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    modRuntimeOnly "maven.modrinth:dawn-of-time:OX2UPX7m"
-    modRuntimeOnly "maven.modrinth:yacl:o3cDn8Vp"
+    runtimeOnly "maven.modrinth:dawn-of-time:GAfvth9d"
+    runtimeOnly "maven.modrinth:yacl:s9SjoFu1"
     // YACL nested libraries are not loaded from Maven dependencies in dev
     runtimeOnly "org.quiltmc.parsers:json:0.2.1"
     runtimeOnly "org.quiltmc.parsers:gson:0.2.1"
-    modRuntimeOnly "maven.modrinth:armor-of-the-ages:diY1l81b"
+    runtimeOnly "maven.modrinth:armor-of-the-ages:5sPEZaZo"
     implementation project(":common")
 }
 
 loom {
     if (project(":common").file("src/main/resources/${mod_id}.accesswidener").exists()) {
         accessWidenerPath.set(project(":common").file("src/main/resources/${mod_id}.accesswidener"))
-    }
-    mixin {
-        defaultRefmapName.set("${mod_id}.refmap.json")
     }
     runs {
         client {
@@ -71,7 +64,7 @@ loom {
 }
 
 publishMods {
-    file = remapJar.archiveFile
+    file = jar.archiveFile
     modLoaders.addAll("fabric")
 
     curseforge {
