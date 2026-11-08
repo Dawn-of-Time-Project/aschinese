@@ -10,6 +10,10 @@ repositories {
         url = "https://maven.terraformersmc.com/"
     }
     maven {
+        name = "QuiltMC"
+        url = "https://maven.quiltmc.org/repository/release"
+    }
+    maven {
         url = "https://maven.isxander.dev/releases"
     }
     exclusiveContent {
@@ -34,9 +38,12 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-    modImplementation "dev.isxander:yet-another-config-lib:3.6.6+1.20.1-fabric"
-    modImplementation("maven.modrinth:armor-of-the-ages:1.3.4-fabric")
-    modRuntimeOnly("maven.modrinth:dawn-of-time:1.5.14-fabric")
+    modRuntimeOnly "maven.modrinth:dawn-of-time:OX2UPX7m"
+    modRuntimeOnly "maven.modrinth:yacl:o3cDn8Vp"
+    // YACL nested libraries are not loaded from Maven dependencies in dev
+    runtimeOnly "org.quiltmc.parsers:json:0.2.1"
+    runtimeOnly "org.quiltmc.parsers:gson:0.2.1"
+    modRuntimeOnly "maven.modrinth:armor-of-the-ages:diY1l81b"
     implementation project(":common")
 }
 

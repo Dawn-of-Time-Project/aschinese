@@ -1,5 +1,4 @@
 {
-    "name": "chinese:tulou",
     "fallback": "minecraft:empty",
     "elements": [
         {

@@ -1,5 +1,4 @@
 {
-    "name": "chinese:small_house",
     "fallback": "minecraft:empty",
     "elements": [
         {

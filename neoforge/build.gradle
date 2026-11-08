@@ -1,0 +1,66 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+    id 'me.modmuss50.mod-publish-plugin'
+}
+
+neoForge {
+    version = neoforge_version
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})"
+        }
+        client { client() }
+        data {
+            data()
+            programArguments.addAll '--mod', mod_id, '--all',
+                '--output', file('src/generated/resources/').absolutePath,
+                '--existing', file('src/main/resources/').absolutePath
+        }
+        server { server() }
+    }
+    mods {
+        "${mod_id}" { sourceSet sourceSets.main }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
+}
+
+dependencies {
+    compileOnly project(":common")
+    runtimeOnly("maven.modrinth:architectury-api:1IiqEQGl")
+    runtimeOnly("maven.modrinth:yacl:7TVdVtxF")
+    runtimeOnly("maven.modrinth:fusion-connected-textures:AYDaLPK8")
+    runtimeOnly("maven.modrinth:armor-of-the-ages:EvVBQ12Y")
+    runtimeOnly("maven.modrinth:dawn-of-time:vuLdhPUq")
+    runtimeOnly("maven.modrinth:garden-trails:z6aW3Swm")
+    runtimeOnly("maven.modrinth:dot-beyond-vanilla:xeJOSgnD")
+}
+
+publishMods {
+    file = layout.buildDirectory.file("libs/${mod_id}-neoforge-${minecraft_version}-${project.version}.jar")
+    modLoaders.add("neoforge")
+
+    curseforge {
+        //neoforge only dependencies found on curseforge go here. same format as in the root build.gradle
+    }
+
+    modrinth {
+        //neoforge only dependencies found on modrinth go here. same format as in the root build.gradle
+    }
+}
